@@ -1,4 +1,4 @@
-/* $XFree86$ */
+/* $XFree86: xc/programs/xcursorgen/xcursorgen.c,v 1.9 2003/04/21 14:15:35 herrb Exp $ */
 /*
  * xcursorgen.c
  *

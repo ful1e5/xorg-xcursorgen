@@ -1,7 +1,7 @@
 # $XdotOrg: $
 
 AC_PREREQ([2.57])
-AC_INIT(xcursorgen, [1.0], [xorg@freedesktop.org], xcursorgen)
+AC_INIT(xcursorgen, [0.99.0], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], xcursorgen)
 AM_INIT_AUTOMAKE([dist-bzip2])
 AM_MAINTAINER_MODE
 
@@ -16,5 +16,7 @@ AC_TYPE_SIGNAL
 PKG_CHECK_MODULES(XCURSORGEN, x11 xcursor libpng12)
 AC_SUBST(XCURSOR_CFLAGS)
 AC_SUBST(XCURSOR_LIBS)
+
+XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile])

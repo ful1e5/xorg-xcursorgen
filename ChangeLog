@@ -1,3 +1,8 @@
+2005-10-20  Eric Anholt  <anholt@FreeBSD.org>
+
+	* Makefile.am:
+	Fix spelling of man1_MANS so the manpage gets installed. (Bill Crawford)
+
 2005-07-09  Keith Packard  <keithp@keithp.com>
 
 	* .cvsignore:

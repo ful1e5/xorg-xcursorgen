@@ -6,6 +6,6 @@ xcursorgen_CFLAGS = @XCURSORGEN_CFLAGS@
 
 xcursorgen_LDADD = @XCURSORGEN_LIBS@
 
-man_MAN1 = xcursorgen.man
+man1_MANS = xcursorgen.man
 
 EXTRA_DIST = xcursorgen.man

@@ -1,7 +1,7 @@
 # $XdotOrg: $
 
 AC_PREREQ([2.57])
-AC_INIT(xcursorgen, [0.99.0], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], xcursorgen)
+AC_INIT(xcursorgen, [0.99.1], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], xcursorgen)
 AM_INIT_AUTOMAKE([dist-bzip2])
 AM_MAINTAINER_MODE
 

@@ -1,3 +1,11 @@
+2005-11-12  Alan Coopersmith  <alan.coopersmith@sun.com>
+
+	* Makefile.am: 
+	* configure.ac:
+	Bug #5021 <https://bugs.freedesktop.org/show_bug.cgi?id=5021>
+	Patch #3786 <https://bugs.freedesktop.org/attachment.cgi?id=3786>
+	xcursorgen installs manpages into 'man1' instead of 'man1x'
+
 2005-11-09  Kevin E. Martin  <kem-at-freedesktop-dot-org>
 
 	* configure.ac:

@@ -6,7 +6,7 @@ xcursorgen_CFLAGS = @XCURSORGEN_CFLAGS@
 
 xcursorgen_LDADD = @XCURSORGEN_LIBS@
 
-appmandir =  $(mandir)/man$(APP_MAN_SUFFIX)
+appmandir = $(APP_MAN_DIR)
 
 appman_SOURCES = xcursorgen.man
 appman_DATA = $(appman_SOURCES:man=@APP_MAN_SUFFIX@)

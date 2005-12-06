@@ -8,10 +8,10 @@ xcursorgen_LDADD = @XCURSORGEN_LIBS@
 
 appmandir = $(APP_MAN_DIR)
 
-appman_SOURCES = xcursorgen.man
-appman_DATA = $(appman_SOURCES:man=@APP_MAN_SUFFIX@)
+appman_PRE = xcursorgen.man
+appman_DATA = $(appman_PRE:man=@APP_MAN_SUFFIX@)
 
-EXTRA_DIST = $(appman_SOURCES)
+EXTRA_DIST = $(appman_PRE)
 CLEANFILES = $(appman_DATA)
 
 MAN_SUBSTS = -e 's|__vendorversion__|"$(XORGRELSTRING)" "$(XORGMANNAME)"|' 

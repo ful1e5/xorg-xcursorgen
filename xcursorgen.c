@@ -320,6 +320,7 @@ write_cursors (int count, struct flist *list, char *filename, char *prefix)
       if (image == NULL)
 	{
 	  fprintf (stderr, "PNG error while reading %s!\n", list->pngfile);
+	  fclose(fp);
 	  return 1;
 	}
 

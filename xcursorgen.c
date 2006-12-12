@@ -122,6 +122,7 @@ read_config_file (char *config, struct flist **list)
 	{
           fprintf (stderr, "malloc() failed\n");
 	  fclose (fp);
+	  free(curr);
           return 0;
 	}
     

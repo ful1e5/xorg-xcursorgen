@@ -23,6 +23,8 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
+#include "config.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -33,8 +35,6 @@
 #include <X11/Xcursor/Xcursor.h>
 
 #include <png.h>
-
-#define VERSION_STR "0.1"
 
 struct flist
 {
@@ -382,7 +382,7 @@ main (int argc, char *argv[])
     {
       if (strcmp (argv[i], "-V") == 0 || strcmp (argv[i], "--version") == 0)
         {
-          printf ("xcursorgen version %s\n", VERSION_STR);
+          printf ("xcursorgen version %s\n", PACKAGE_VERSION);
           return 0;
         }
 

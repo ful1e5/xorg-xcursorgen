@@ -48,7 +48,7 @@ struct flist
 static void
 usage (char *name)
 {
-  fprintf (stderr, "usage: %s [-Vh] [--version] [--help] [-p <dir>] [--prefix <dir>] [CONFIG [OUT]]\n",
+  fprintf (stderr, "usage: %s [-V] [--version] [-?] [--help] [-p <dir>] [--prefix <dir>] [CONFIG [OUT]]\n",
 	   name);
 
   fprintf (stderr, "Generate an Xcursor file from a series of PNG images\n");

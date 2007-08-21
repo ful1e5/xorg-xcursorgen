@@ -22,6 +22,10 @@ ChangeLog:
 
 dist-hook: ChangeLog
 
+# Strings to replace in man pages
+XORGRELSTRING = @PACKAGE_STRING@
+  XORGMANNAME = X Version 11
+
 MAN_SUBSTS = \
 	-e 's|__vendorversion__|"$(XORGRELSTRING)" "$(XORGMANNAME)"|' \
 	-e 's|__appmansuffix__|$(APP_MAN_SUFFIX)|g' \

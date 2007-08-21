@@ -117,16 +117,14 @@ read_config_file (char *config, struct flist **list)
 
       curr->delay = delay;
 
-      curr->pngfile = malloc (strlen (pngfile) + 1);
+      curr->pngfile = strdup (pngfile);
       if (curr->pngfile == NULL)
 	{
-          fprintf (stderr, "malloc() failed\n");
+          fprintf (stderr, "strdup() failed\n");
 	  fclose (fp);
 	  free(curr);
           return 0;
 	}
-    
-      strcpy (curr->pngfile, pngfile);
 
       curr->next = NULL;
 

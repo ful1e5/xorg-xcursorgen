@@ -19,3 +19,7 @@ stamp-h1
 xcursorgen
 xcursorgen.1
 *~
+*.o
+xcursorgen-*.tar.*
+ChangeLog
+tags

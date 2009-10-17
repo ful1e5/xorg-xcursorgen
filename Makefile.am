@@ -2,9 +2,9 @@ bin_PROGRAMS = xcursorgen
 
 xcursorgen_SOURCES = xcursorgen.c
 
-AM_CFLAGS = @XCURSORGEN_CFLAGS@
+AM_CFLAGS = $(CWARNFLAGS) $(XCURSORGEN_CFLAGS)
 
-xcursorgen_LDADD = @XCURSORGEN_LIBS@
+xcursorgen_LDADD = $(XCURSORGEN_LIBS)
 
 appmandir = $(APP_MAN_DIR)
 
@@ -26,6 +26,8 @@ dist-hook: ChangeLog
 XORGRELSTRING = @PACKAGE_STRING@
   XORGMANNAME = X Version 11
 
+SED = sed
+
 MAN_SUBSTS = \
 	-e 's|__vendorversion__|"$(XORGRELSTRING)" "$(XORGMANNAME)"|' \
 	-e 's|__appmansuffix__|$(APP_MAN_SUFFIX)|g' \
@@ -34,4 +36,4 @@ MAN_SUBSTS = \
 SUFFIXES = .$(APP_MAN_SUFFIX) .man
 
 .man.$(APP_MAN_SUFFIX):
-	sed $(MAN_SUBSTS) < $< > $@
+	$(AM_V_GEN)$(SED) $(MAN_SUBSTS) < $< > $@

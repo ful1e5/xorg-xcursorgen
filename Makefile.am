@@ -25,16 +25,7 @@ ChangeLog:
 
 dist-hook: ChangeLog INSTALL
 
-# Strings to replace in man pages
-XORGRELSTRING = @PACKAGE_STRING@
-  XORGMANNAME = X Version 11
-
-SED = sed
-
-MAN_SUBSTS = \
-	-e 's|__vendorversion__|"$(XORGRELSTRING)" "$(XORGMANNAME)"|' \
-	-e 's|__appmansuffix__|$(APP_MAN_SUFFIX)|g' \
-	-e 's|__libmansuffix__|$(LIB_MAN_SUFFIX)|g'
+# String replacements in MAN_SUBSTS now come from xorg-macros.m4 via configure
 
 SUFFIXES = .$(APP_MAN_SUFFIX) .man
 

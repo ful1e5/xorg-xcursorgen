@@ -135,7 +135,7 @@ read_config_file (char *config, struct flist **list)
 	}
       else
 	{
-	  start = curr; 
+	  start = curr;
           end = curr;
         }
 
@@ -276,7 +276,7 @@ load_image (struct flist *list, char *prefix)
       png_destroy_read_struct (&png, &info, NULL);
       return NULL;
     }
-  
+
   for (i = 0; i < height; i++)
     rows[i] = (png_bytep) (image->pixels + i * width);
 

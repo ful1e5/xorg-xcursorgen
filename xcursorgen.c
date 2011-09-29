@@ -45,7 +45,7 @@ struct flist
 };
 
 static void
-usage (char *name)
+usage (const char *name)
 {
   fprintf (stderr, "usage: %s [-V] [--version] [-?] [--help] [-p <dir>] [--prefix <dir>] [CONFIG [OUT]]\n",
 	   name);
@@ -62,7 +62,7 @@ usage (char *name)
 }
 
 static int
-read_config_file (char *config, struct flist **list)
+read_config_file (const char *config, struct flist **list)
 {
   FILE *fp;
   char line[4096], pngfile[4000];
@@ -172,7 +172,7 @@ premultiply_data (png_structp png, png_row_infop row_info, png_bytep data)
 }
 
 static XcursorImage *
-load_image (struct flist *list, char *prefix)
+load_image (struct flist *list, const char *prefix)
 {
   XcursorImage *image;
   png_structp png;
@@ -290,7 +290,8 @@ load_image (struct flist *list, char *prefix)
 }
 
 static int
-write_cursors (int count, struct flist *list, char *filename, char *prefix)
+write_cursors (int count, struct flist *list,
+	       const char *filename, const char *prefix)
 {
   XcursorImages *cimages;
   XcursorImage *image;
@@ -371,8 +372,8 @@ main (int argc, char *argv[])
 {
   struct flist *list;
   int count;
-  char *in = NULL, *out = NULL;
-  char *prefix = NULL;
+  const char *in = NULL, *out = NULL;
+  const char *prefix = NULL;
   int i;
 
   for (i = 1; i < argc; i++)

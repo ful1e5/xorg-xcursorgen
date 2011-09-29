@@ -1,4 +1,3 @@
-/* $XFree86: xc/programs/xcursorgen/xcursorgen.c,v 1.8 2002/11/23 02:33:20 keithp Exp $ */
 /*
  * xcursorgen.c
  *

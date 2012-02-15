@@ -391,13 +391,11 @@ main (int argc, char *argv[])
         }
       if (strcmp (argv[i], "-image") == 0)
         {
-	  int i = 2;
 	  int ret = 0;
-	  while (argv[i])
+	  while (argv[++i])
 	  {
 	    if (check_image (argv[i]))
 	      ret = i;
-	    i++;
 	  }
 	  return ret;
 	}

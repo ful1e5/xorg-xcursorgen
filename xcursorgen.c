@@ -338,7 +338,6 @@ check_image (char *image)
   unsigned int width, height;
   unsigned char *data;
   int x_hot, y_hot;
-  XImage ximage;
   unsigned char hash[XCURSOR_BITMAP_HASH_SIZE];
   int i;
 
@@ -347,19 +346,23 @@ check_image (char *image)
     fprintf (stderr, "Can't open bitmap file \"%s\"\n", image);
     return 1;
   }
-  ximage.height = height;
-  ximage.width = width;
-  ximage.depth = 1;
-  ximage.bits_per_pixel = 1;
-  ximage.xoffset = 0;
-  ximage.format = XYPixmap;
-  ximage.data = (char *)data;
-  ximage.byte_order = LSBFirst;
-  ximage.bitmap_unit = 8;
-  ximage.bitmap_bit_order = LSBFirst;
-  ximage.bitmap_pad = 8;
-  ximage.bytes_per_line = (width+7)/8;
-  XcursorImageHash (&ximage, hash);
+  else {
+    XImage ximage = {
+      .width = width,
+      .height = height,
+      .depth = 1,
+      .bits_per_pixel = 1,
+      .xoffset = 0,
+      .format = XYPixmap,
+      .data = (char *)data,
+      .byte_order = LSBFirst,
+      .bitmap_unit = 8,
+      .bitmap_bit_order = LSBFirst,
+      .bitmap_pad = 8,
+      .bytes_per_line = (width+7)/8
+    };
+    XcursorImageHash (&ximage, hash);
+  }
   printf ("%s: ", image);
   for (i = 0; i < XCURSOR_BITMAP_HASH_SIZE; i++)
     printf ("%02x", hash[i]);

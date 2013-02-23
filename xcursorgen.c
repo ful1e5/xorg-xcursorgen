@@ -47,18 +47,18 @@ struct flist
 static void
 usage (const char *name)
 {
-  fprintf (stderr, "usage: %s [-V] [--version] [-?] [--help] [-p <dir>] [--prefix <dir>] [CONFIG [OUT]]\n",
-	   name);
-
-  fprintf (stderr, "Generate an Xcursor file from a series of PNG images\n");
-  fprintf (stderr, "\n");
-  fprintf (stderr, "  -V, --version      display the version number and exit\n");
-  fprintf (stderr, "  -?, --help         display this message and exit\n");
-  fprintf (stderr, "  -p, --prefix <dir> find cursor images in <dir>\n");
-  fprintf (stderr, "\n");
-  fprintf (stderr, "With no CONFIG, or when CONFIG is -, read standard input. "
-		   "Same with OUT and\n");
-  fprintf (stderr, "standard output.\n");
+  fprintf (stderr,
+	   "usage: %s [-V] [--version] [-?] [--help] [-p <dir>] [--prefix <dir>] [CONFIG [OUT]]\n%s",
+	   name,
+	   "Generate an Xcursor file from a series of PNG images\n"
+	   "\n"
+	   "  -V, --version      display the version number and exit\n"
+	   "  -?, --help         display this message and exit\n"
+	   "  -p, --prefix <dir> find cursor images in <dir>\n"
+	   "\n"
+	   "With no CONFIG, or when CONFIG is -, read standard input. "
+	   "Same with OUT and\n"
+	   "standard output.\n");
 }
 
 static int

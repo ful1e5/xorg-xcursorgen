@@ -39,8 +39,8 @@ struct flist
 {
   int size;
   int xhot, yhot;
-  char *pngfile;
   int delay;
+  char *pngfile;
   struct flist *next;
 };
 

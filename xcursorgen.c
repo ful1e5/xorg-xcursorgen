@@ -407,6 +407,8 @@ main (int argc, char *argv[])
 	  i++;
 	  if (argv[i] == NULL)
 	    {
+	      fprintf (stderr, "%s: %s requires an argument\n",
+		       argv[0], argv[i-1]);
 	      usage (argv[0]);
 	      return 1;
 	    }
@@ -420,6 +422,7 @@ main (int argc, char *argv[])
 	out = argv[i];
       else
       {
+	fprintf (stderr, "%s: unexpected argument '%s'\n", argv[0], argv[i]);
 	usage (argv[0]);
 	return 1;
       }
